@@ -2,7 +2,8 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
-C:\Users\thedi\source\repos\EntityFrameworkLab/Scripts* linguist-vendored
+C:\Users\thedi\source\repos\EntityFrameworkLab\Scripts\* linguist-vendored
+jquery.js linguist-vendored=false
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
