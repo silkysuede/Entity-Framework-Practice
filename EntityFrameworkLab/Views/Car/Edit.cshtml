@@ -1,0 +1,54 @@
+﻿@model EntityFrameworkLab.Models.Car
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+    <div>
+
+        @if (Model.CarMake == null)
+        {
+            <h1>Add Car</h1>
+        }
+        else
+        {
+            <h1>Edit @Model.CarMake </h1>
+        }
+
+
+        @using (Html.BeginForm("Edit", "Car"))
+    {
+    <div>
+        @Html.HiddenFor(m => m.CarID)
+    <div class="form-group">
+        <label>Make:</label>
+        @Html.TextBoxFor(x => x.CarMake, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Model:</label>
+        @Html.TextBoxFor(x => x.CarModel, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Year:</label>
+        @Html.TextAreaFor(x => x.Year, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Miles:</label>
+        @Html.TextBoxFor(x => x.Miles, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Color:</label>
+        @Html.TextBoxFor(x => x.Color, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Price:</label>
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    </div>
+
+</div>
+            <div>
+                <br /><br />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                @Html.ActionLink("Cancel and return to List", "InventoryList", null, new { @class = "btn btn-default" })
+            </div>
+        }

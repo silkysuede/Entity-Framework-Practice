@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EntityFrameworkLab.Models.Car>
+
+@{
+    ViewBag.Title = "Cars";
+}
+    <h1>Cars</h1>
+@foreach(var p in Model)
+{
+    <div>
+        
+        <br />
+        <h3>@p.CarMake @Html.ActionLink("Edit", "Edit", new { p.CarID})</h3>
+        @p.CarModel 
+        @p.Year 
+        @p.Miles 
+        @p.Color 
+        @p.Price.ToString("c")
+        <br />
+        @Html.ActionLink("Delete", "Delete", new { p.CarID})
+    </div>
+ 
+
+    
+}
+<div>
+    <br /><br />
+    @Html.ActionLink("Add a new car", "Create")
+</div>
+
